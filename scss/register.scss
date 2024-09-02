@@ -26,6 +26,31 @@ form {
     height: 200px;
 
     background-color: $mainColor;
+
+    position: relative;
+
+    overflow: hidden;
+
+    .logo {
+      width: 150px;
+      height: 150px;
+
+      background-color: #b74949;
+
+      border-radius: 50%;
+
+      position: absolute;
+      top: calc(50% - 75px);
+      right: calc(50% - 75px);
+    }
+
+    .houses {
+      height: 100%;
+
+      background-image: url("../svg/houses.svg");
+      background-repeat: repeat-x;
+      background-position: bottom -3px right 0;
+    }
   }
 
   h1 {
