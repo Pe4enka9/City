@@ -32,6 +32,12 @@ if (isset($_SESSION['user'])) {
         <div class="input_wrapper">
             <div class="wrapper tel_wrapper">
                 <input type="text" name="tel" id="tel" placeholder="Введите номер телефона">
+                <?php
+                if (isset($_SESSION['errorLoginPassword'])) {
+                    echo $_SESSION['errorLoginPassword'];
+                    unset($_SESSION['errorLoginPassword']);
+                }
+                ?>
             </div>
 
             <div class="wrapper password_wrapper">
@@ -45,6 +51,8 @@ if (isset($_SESSION['user'])) {
 
         <img src="./svg/qr.svg" alt="QR-код" id="qr">
     </form>
+
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

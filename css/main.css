@@ -56,6 +56,26 @@ form .input_wrapper .wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
+}
+form .input_wrapper .wrapper .error {
+  padding: 10px;
+  color: #dc3545;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  animation: error_opacity 0.5s forwards;
+}
+@keyframes error_opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 form .input_wrapper input {
   width: 100%;

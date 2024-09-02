@@ -21,6 +21,7 @@ try {
 
         header('Location: ../pages/profile.php');
     } else {
+        $_SESSION['errorLoginPassword'] = '<div class="error error_login_password">Неправильный логин или пароль!</div>';
         header('Location: /');
     }
 } catch (PDOException $e) {

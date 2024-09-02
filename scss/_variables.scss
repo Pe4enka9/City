@@ -2,3 +2,20 @@ $bgColor: #edeef0;
 $mainColor: #529e63;
 $font: "Inter", system-ui;
 $successColor: #00c851;
+$errorColor: #dc3545;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: $font;
+  font-size: 20px;
+  font-weight: 400;
+
+  color: #000;
+}
+
+body {
+  background-color: $bgColor;
+}
