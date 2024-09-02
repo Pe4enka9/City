@@ -78,9 +78,12 @@ form #btn {
   cursor: pointer;
 }
 form span {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 form span a {
   color: #00f;
   text-decoration: none;
-}/*# sourceMappingURL=register.css.map */
+}
+form #qr {
+  margin-bottom: 20px;
+}/*# sourceMappingURL=main.css.map */

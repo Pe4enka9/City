@@ -51,6 +51,8 @@
         </div>
 
         <input type="submit" id="btn" value="Зарегистрироваться">
+
+        <span>Уже есть аккаунт? <a href="/">Авторизоваться!</a></span>
     </form>
 </body>
 
