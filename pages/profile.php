@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('Location: /');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -16,8 +24,14 @@
         <header>
             <div class="background">
                 <div class="icons">
-                    <img src="../svg/qr.svg" id="qr" alt="QR-код">
-                    <img src="../svg/settings.svg" id="settings" alt="Настройки">
+                    <div class="logout">
+                        <a href="../vendor/logout.php"><img src="../svg/icon_exit.svg" alt="Выход"></a>
+                    </div>
+
+                    <div class="of_icons">
+                        <img src="../svg/qr.svg" id="qr" alt="QR-код">
+                        <img src="../svg/settings.svg" id="settings" alt="Настройки">
+                    </div>
                 </div>
 
                 <div class="avatar"></div>

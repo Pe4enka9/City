@@ -1,3 +1,12 @@
+<?php
+session_start();
+require_once '../connect.php';
+
+if (isset($_SESSION['user'])) {
+    header('Location: ./profile.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -12,7 +21,7 @@
 </head>
 
 <body>
-    <form action="" id="form">
+    <form action="../vendor/create.php" method="post" id="form">
         <div class="background">
             <div class="logo"></div>
             <div class="houses"></div>
@@ -22,7 +31,7 @@
 
         <div class="input_wrapper">
             <div class="wrapper tel_wrapper">
-                <input type="tel" name="tel" id="tel" placeholder="Введите номер телефона">
+                <input type="text" name="tel" id="tel" placeholder="Введите номер телефона">
             </div>
 
             <div class="wrapper email_wrapper">

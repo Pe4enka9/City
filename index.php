@@ -1,3 +1,12 @@
+<?php
+session_start();
+require_once './connect.php';
+
+if (isset($_SESSION['user'])) {
+    header('Location: ./pages/profile.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -12,7 +21,7 @@
 </head>
 
 <body>
-    <form action="" id="form">
+    <form action="./vendor/login.php" method="post" id="form">
         <div class="background">
             <div class="logo"></div>
             <div class="houses"></div>
@@ -21,8 +30,8 @@
         <h1>Авторизация</h1>
 
         <div class="input_wrapper">
-            <div class="wrapper login_wrapper">
-                <input type="text" name="login" id="login" placeholder="Введите логин">
+            <div class="wrapper tel_wrapper">
+                <input type="text" name="tel" id="tel" placeholder="Введите номер телефона">
             </div>
 
             <div class="wrapper password_wrapper">

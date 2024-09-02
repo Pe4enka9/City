@@ -35,17 +35,38 @@ body {
       position: relative;
 
       .icons {
+        width: 100%;
+
         display: flex;
         align-items: center;
-        gap: 8px;
+        justify-content: space-between;
 
         img {
           cursor: pointer;
         }
 
-        #qr {
-          width: 60px;
-          height: 60px;
+        .logout {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 70px;
+            height: 70px;
+
+            transform: scale(-1, 1);
+          }
+        }
+
+        .of_icons {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          #qr {
+            width: 60px;
+            height: 60px;
+          }
         }
       }
 
