@@ -21,38 +21,38 @@ if (isset($_SESSION['user'])) {
 </head>
 
 <body>
-    <form action="./vendor/login.php" method="post" id="form">
-        <div class="background">
-            <div class="logo"></div>
-            <div class="houses"></div>
+<form action="./vendor/login.php" method="post" id="form">
+    <div class="background">
+        <div class="logo"></div>
+        <div class="houses"></div>
+    </div>
+
+    <h1>Авторизация</h1>
+
+    <div class="input_wrapper">
+        <div class="wrapper tel_wrapper">
+            <input type="text" name="tel" id="tel" placeholder="Введите номер телефона">
+            <?php
+            if (isset($_SESSION['errorLoginPassword'])) {
+                echo $_SESSION['errorLoginPassword'];
+                unset($_SESSION['errorLoginPassword']);
+            }
+            ?>
         </div>
 
-        <h1>Авторизация</h1>
-
-        <div class="input_wrapper">
-            <div class="wrapper tel_wrapper">
-                <input type="text" name="tel" id="tel" placeholder="Введите номер телефона">
-                <?php
-                if (isset($_SESSION['errorLoginPassword'])) {
-                    echo $_SESSION['errorLoginPassword'];
-                    unset($_SESSION['errorLoginPassword']);
-                }
-                ?>
-            </div>
-
-            <div class="wrapper password_wrapper">
-                <input type="password" name="password" id="password" placeholder="Введите пароль">
-            </div>
+        <div class="wrapper password_wrapper">
+            <input type="password" name="password" id="password" placeholder="Введите пароль">
         </div>
+    </div>
 
-        <input type="submit" id="btn" value="Войти">
+    <input type="submit" id="btn" value="Войти">
 
-        <span>Ещё нет аккаунта? <a href="./pages/register.php">Зарегистрироваться!</a></span>
+    <span>Ещё нет аккаунта? <a href="./pages/register.php">Зарегистрироваться!</a></span>
 
-        <img src="./svg/qr.svg" alt="QR-код" id="qr">
-    </form>
+    <img src="./svg/qr.svg" alt="QR-код" id="qr">
+</form>
 
-    <script src="./js/main.js"></script>
+<script src="./js/main.js"></script>
 </body>
 
 </html>
