@@ -57,12 +57,18 @@ form {
         background-size: 30px;
 
         position: absolute;
-        top: 25%;
-        left: 50%;
+        top: 22%;
+        right: 10px;
+
+        cursor: pointer;
       }
 
       .password_hide {
         background-image: url("../svg/eye_password_hide.svg");
+      }
+
+      .password_show {
+        background-image: url("../svg/eye_password_show.svg");
       }
     }
 

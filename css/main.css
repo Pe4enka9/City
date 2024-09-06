@@ -106,11 +106,15 @@ form .input_wrapper .password_wrapper .password_eye {
   -webkit-background-size: 30px;
   background-size: 30px;
   position: absolute;
-  top: 25%;
-  left: 50%;
+  top: 22%;
+  right: 10px;
+  cursor: pointer;
 }
 form .input_wrapper .password_wrapper .password_hide {
   background-image: url("../svg/eye_password_hide.svg");
+}
+form .input_wrapper .password_wrapper .password_show {
+  background-image: url("../svg/eye_password_show.svg");
 }
 form .input_wrapper input {
   width: 100%;
