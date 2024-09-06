@@ -1,6 +1,24 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+}
+
+body {
+  background-color: #edeef0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Inter", system-ui;
   font-size: 20px;
@@ -45,6 +63,7 @@ form h1 {
   margin: 20px 0 30px 0;
   font-size: 24px;
 }
+
 form .input_wrapper {
   width: 100%;
   display: flex;
@@ -77,6 +96,22 @@ form .input_wrapper .wrapper .error {
     opacity: 1;
   }
 }
+form .input_wrapper .password_wrapper {
+  position: relative;
+}
+form .input_wrapper .password_wrapper .password_eye {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  -webkit-background-size: 30px;
+  background-size: 30px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+}
+form .input_wrapper .password_wrapper .password_hide {
+  background-image: url("../svg/eye_password_hide.svg");
+}
 form .input_wrapper input {
   width: 100%;
   max-width: 500px;
@@ -86,6 +121,20 @@ form .input_wrapper input {
   border: none;
   border-radius: 15px;
   outline: none;
+}
+form * {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+}
+form body {
+  background-color: #edeef0;
 }
 form #btn {
   width: 100%;
@@ -100,12 +149,11 @@ form #btn {
   cursor: pointer;
 }
 form span {
-  margin-bottom: 50px;
+  text-align: center;
 }
 form span a {
   color: #00f;
   text-decoration: none;
 }
-form #qr {
-  margin-bottom: 20px;
-}/*# sourceMappingURL=main.css.map */
+
+/*# sourceMappingURL=main.css.map */

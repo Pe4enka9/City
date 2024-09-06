@@ -20,58 +20,53 @@ if (!isset($_SESSION['user'])) {
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <div class="background">
-                <div class="icons">
-                    <div class="logout">
-                        <a href="../vendor/logout.php"><img src="../svg/icon_exit.svg" alt="Выход"></a>
-                    </div>
+<div class="wrapper">
+    <header>
+        <div class="background">
+            <div class="icons">
+                <a href="../vendor/logout.php"><img src="../svg/icon_exit.svg" id="logout" alt="Выход"></a>
 
-                    <div class="of_icons">
-                        <img src="../svg/qr.svg" id="qr" alt="QR-код">
-                        <img src="../svg/settings.svg" id="settings" alt="Настройки">
-                    </div>
-                </div>
-
-                <div class="avatar"></div>
+                <img src="../svg/settings.svg" id="settings" alt="Настройки">
             </div>
-        </header>
 
-        <main>
-            <span id="status">онлайн</span>
-            <span id="more">Подробнее <img src="../svg/info.svg" alt="Подробнее"></span>
+            <div class="avatar"></div>
+        </div>
+    </header>
 
-            <div class="full_name">ФИО</div>
+    <main>
+        <span id="status">онлайн</span>
+        <span id="more">Подробнее <img src="../svg/info.svg" alt="Подробнее"></span>
 
-            <nav>
-                <div class="navigation">
-                    <img src="../svg/icon_news.svg" alt="Новости">
-                    Новости
-                </div>
-                <div class="navigation">
-                    <img src="../svg/icon_friends.svg" alt="Друзья">
-                    Друзья
-                </div>
-                <div class="navigation">
-                    <img src="../svg/icon_music.svg" alt="Музыка">
-                    Музыка
-                </div>
-                <div class="navigation">
-                    <img src="../svg/icon_groups.svg" alt="Группы">
-                    Группы
-                </div>
-                <div class="navigation">
-                    <img src="../svg/icon_video.svg" alt="Видео">
-                    Видео
-                </div>
-                <div class="navigation">
-                    <img src="../svg/icon_shop.svg" alt="Магазин">
-                    Магазин
-                </div>
-            </nav>
-        </main>
-    </div>
+        <div class="full_name">ФИО</div>
+
+        <nav>
+            <div class="navigation">
+                <img src="../svg/icon_news.svg" alt="Новости">
+                Новости
+            </div>
+            <div class="navigation">
+                <img src="../svg/icon_friends.svg" alt="Друзья">
+                Друзья
+            </div>
+            <div class="navigation">
+                <img src="../svg/icon_music.svg" alt="Музыка">
+                Музыка
+            </div>
+            <div class="navigation">
+                <img src="../svg/icon_groups.svg" alt="Группы">
+                Группы
+            </div>
+            <div class="navigation">
+                <img src="../svg/icon_video.svg" alt="Видео">
+                Видео
+            </div>
+            <div class="navigation">
+                <img src="../svg/icon_shop.svg" alt="Магазин">
+                Магазин
+            </div>
+        </nav>
+    </main>
+</div>
 </body>
 
 </html>

@@ -31,19 +31,19 @@ if (isset($_SESSION['user'])) {
 
         <div class="input_wrapper">
             <div class="wrapper tel_wrapper">
-                <input type="text" name="tel" id="tel" placeholder="Введите номер телефона">
+                <input type="text" name="tel" id="tel" placeholder="Введите номер телефона" autocomplete="off">
             </div>
 
             <div class="wrapper email_wrapper">
-                <input type="email" name="email" id="email" placeholder="Введите свою эл. почту">
+                <input type="email" name="email" id="email" placeholder="Введите свою эл. почту" autocomplete="off">
             </div>
 
             <div class="wrapper username_wrapper">
-                <input type="text" name="username" id="username" placeholder="Введите своё имя">
+                <input type="text" name="username" id="username" placeholder="Введите своё имя" autocapitalize="off">
             </div>
 
             <div class="wrapper lastName_wrapper">
-                <input type="text" name="lastName" id="lastName" placeholder="Введите свою фамилию">
+                <input type="text" name="lastName" id="lastName" placeholder="Введите свою фамилию" autocomplete="off">
             </div>
 
             <div class="wrapper bday_wrapper">
@@ -51,11 +51,11 @@ if (isset($_SESSION['user'])) {
             </div>
 
             <div class="wrapper password_wrapper">
-                <input type="password" name="password" id="password" placeholder="Введите пароль">
+                <input type="password" name="password" id="password" placeholder="Введите пароль" autocomplete="off">
             </div>
 
             <div class="wrapper password_repeat_wrapper">
-                <input type="password" id="password_repeat" placeholder="Повторите пароль">
+                <input type="password" id="password_repeat" placeholder="Повторите пароль" autocomplete="off">
             </div>
         </div>
 

@@ -29,27 +29,15 @@
           cursor: pointer;
         }
 
-        .logout {
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        a {
+          width: 70px;
+          height: 70px;
 
-          img {
+          #logout {
             width: 70px;
             height: 70px;
 
             transform: scale(-1, 1);
-          }
-        }
-
-        .of_icons {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-
-          #qr {
-            width: 60px;
-            height: 60px;
           }
         }
       }

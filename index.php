@@ -42,14 +42,13 @@ if (isset($_SESSION['user'])) {
 
         <div class="wrapper password_wrapper">
             <input type="password" name="password" id="password" placeholder="Введите пароль">
+            <div class="password_eye password_hide"></div>
         </div>
     </div>
 
     <input type="submit" id="btn" value="Войти">
 
     <span>Ещё нет аккаунта? <a href="./pages/register.php">Зарегистрироваться!</a></span>
-
-    <img src="./svg/qr.svg" alt="QR-код" id="qr">
 </form>
 
 <script src="./js/main.js"></script>

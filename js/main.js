@@ -4,3 +4,5 @@ const error = document.querySelector(".error");
 forError = tel.clientWidth / 2 + 20 + "px";
 
 error.style.left = `calc(50% + ${forError})`;
+
+const passwordInput = document.getElementById('password');
