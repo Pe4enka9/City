@@ -1,4 +1,5 @@
 @import "./variables";
+@import "mainStyle";
 @import "formStyle";
 
 form {
@@ -18,31 +19,7 @@ form {
 
       position: relative;
 
-      .error {
-        padding: 10px;
-
-        color: $errorColor;
-        background-color: #fff;
-
-        border: 2px solid #ccc;
-        border-radius: 10px;
-
-        opacity: 0;
-
-        position: absolute;
-        top: 0;
-
-        animation: error_opacity 0.5s forwards;
-      }
-
-      @keyframes error_opacity {
-        0% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-        }
-      }
+      @import "errorStyle";
     }
 
     .password_wrapper {

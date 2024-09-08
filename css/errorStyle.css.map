@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../scss/_variables.scss","../scss/errorStyle.scss"],"names":[],"mappings":"AAAQ;AAQR;EACE;EACA;EACA;EACA;EACA;EAEA,aAXK;EAYL;EACA;EAEA;;;AAGF;EACE,kBArBQ;;;ACAV;EACE;EAEA,ODCW;ECAX;EAEA;EACA;EAEA;EAEA;EACA;EAEA;;;AAGF;EACE;IACE;;EAEF;IACE","file":"errorStyle.css"}

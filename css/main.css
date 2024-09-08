@@ -1,19 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: "Inter", system-ui;
-  font-size: 20px;
-  font-weight: 400;
-  color: #000;
-}
-
-body {
-  background-color: #edeef0;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -64,6 +51,9 @@ form h1 {
   font-size: 24px;
 }
 
+form {
+  @import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
+}
 form .input_wrapper {
   width: 100%;
   display: flex;
@@ -76,9 +66,11 @@ form .input_wrapper .wrapper {
   display: flex;
   justify-content: center;
   position: relative;
+  @import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
 }
 form .input_wrapper .wrapper .error {
   padding: 10px;
+  display: none;
   color: #dc3545;
   background-color: #fff;
   border: 2px solid #ccc;
@@ -125,20 +117,6 @@ form .input_wrapper input {
   border: none;
   border-radius: 15px;
   outline: none;
-}
-form * {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: "Inter", system-ui;
-  font-size: 20px;
-  font-weight: 400;
-  color: #000;
-}
-form body {
-  background-color: #edeef0;
 }
 form #btn {
   width: 100%;
