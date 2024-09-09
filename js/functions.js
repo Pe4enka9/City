@@ -1,6 +1,6 @@
 export function errorStyle(element) {
     const elem = document.getElementById(element);
-    const error = document.querySelector(".error");
+    const error = document.querySelector(`.error_${element}`);
     const errorWidth = elem.clientWidth / 2 + 20 + "px";
     error.style.left = `calc(50% + ${errorWidth})`;
 }

@@ -49,7 +49,7 @@ if (isset($_SESSION['user'])) {
         </div>
 
         <div class="wrapper username_wrapper">
-            <input type="text" name="username" id="username" placeholder="Введите своё имя" autocapitalize="off">
+            <input type="text" name="username" id="username" placeholder="Введите своё имя" autocomplete="off">
         </div>
 
         <div class="wrapper lastName_wrapper">
