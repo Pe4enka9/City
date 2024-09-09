@@ -1,4 +1,4 @@
-import {errorStyle, createError} from "./functions.js";
+import { errorStyle, createError, handleInputError, validateField } from "./functions.js";
 
 const elemArray = {
     'phone': document.getElementById('tel'),
@@ -8,7 +8,7 @@ const elemArray = {
     'bday': document.getElementById('bday'),
     'password': document.getElementById('password'),
     'passwordRepeat': document.getElementById('password_repeat')
-}
+};
 
 const phoneMask = new IMask(elemArray['phone'], {
     mask: '+{7}(000)000-00-00'
@@ -41,160 +41,30 @@ elemArray['bday'].addEventListener('input', () => {
     }
 });
 
+// Удаление ошибок при вводе
+Object.entries({
+    'phone': 'error_tel',
+    'email': 'error_email',
+    'username': 'error_username',
+    'lastName': 'error_lastName',
+    'bday': 'error_bday',
+    'password': 'error_password'
+}).forEach(([key, errorClass]) => {
+    elemArray[key].addEventListener('input', () => handleInputError(elemArray[key], errorClass));
+});
+
+// Валидация при отправке формы
 document.getElementById('form').addEventListener('submit', (event) => {
-    const errorTel = document.querySelector('.error_tel');
-    if (elemArray['phone'].value.length < 1) {
+    const isPhoneValid = validateField('tel_wrapper', phoneMask.unmaskedValue.length === 11, 'error_tel', 'Заполните поле до конца!');
+    const isEmailValid = validateField('email_wrapper', /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(elemArray['email'].value), 'error_email', 'Неправильный адрес эл. почты!');
+    const isUsernameValid = validateField('username_wrapper', elemArray['username'].value.length > 0, 'error_username', 'Это поле обязательно для заполнения!');
+    const isLastnameValid = validateField('lastName_wrapper', elemArray['lastName'].value.length > 0, 'error_lastName', 'Это поле обязательно для заполнения!');
+    const isBdayValid = validateField('bday_wrapper', elemArray['bday'].value.length > 0, 'error_bday', 'Это поле обязательно для заполнения!');
+    const isPasswordValid = validateField('password_wrapper', /^(?=.*?[a-z])(?=.*?[0-9]).{8,}$/.test(elemArray['password'].value), 'error_password', 'Пароль слишком простой!');
+    const isPasswordMatch = validateField('password_wrapper', elemArray['password'].value === elemArray['passwordRepeat'].value, 'error_password', 'Пароли не совпадают!');
+
+    // Останавливаем отправку формы, если есть ошибки
+    if (!isPhoneValid || !isEmailValid || !isUsernameValid || !isLastnameValid || !isBdayValid || !isPasswordValid || !isPasswordMatch) {
         event.preventDefault();
-        if (errorTel) {
-            errorTel.remove();
-        }
-        createError('error_tel', 'Это поле обязательно для заполнения!', 'tel_wrapper');
-        errorStyle('tel');
-    } else if (phoneMask.unmaskedValue.length !== 11) {
-        event.preventDefault();
-        if (errorTel) {
-            errorTel.remove();
-        }
-        createError('error_tel', 'Заполните поле до конца!', 'tel_wrapper');
-        errorStyle('tel');
-    } else {
-        if (errorTel) {
-            errorTel.remove();
-        }
-    }
-
-    const errorEmail = document.querySelector('.error_email');
-    const emailMask = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
-    if (elemArray['email'].value.length < 1) {
-        event.preventDefault();
-        if (errorEmail) {
-            errorEmail.remove();
-        }
-        createError('error_email', 'Это поле обязательно для заполнения!', 'email_wrapper');
-        errorStyle('email');
-    } else if (!emailMask.test(elemArray['email'].value)) {
-        event.preventDefault();
-        if (errorEmail) {
-            errorEmail.remove();
-        }
-        createError('error_email', 'Неправильный адрес эл. почты!', 'email_wrapper');
-        errorStyle('email');
-    } else {
-        if (errorEmail) {
-            errorEmail.remove();
-        }
-    }
-
-    const errorUsername = document.querySelector('.error_username');
-    if (elemArray['username'].value.length < 1) {
-        event.preventDefault();
-        if (errorUsername) {
-            errorUsername.remove();
-        }
-        createError('error_username', 'Это поле обязательно для заполнения!', 'username_wrapper');
-        errorStyle('username');
-    } else {
-        if (errorUsername) {
-            errorUsername.remove();
-        }
-    }
-
-    const errorLastname = document.querySelector('.error_lastName');
-    if (elemArray['lastName'].value.length < 1) {
-        event.preventDefault();
-        if (errorLastname) {
-            errorLastname.remove();
-        }
-        createError('error_lastName', 'Это поле обязательно для заполнения!', 'lastName_wrapper');
-        errorStyle('lastName');
-    } else {
-        if (errorLastname) {
-            errorLastname.remove();
-        }
-    }
-
-    const errorBday = document.querySelector('.error_bday');
-    if (elemArray['bday'].value.length < 1) {
-        event.preventDefault();
-        if (errorBday) {
-            errorBday.remove();
-        }
-        createError('error_bday', 'Это поле обязательно для заполнения!', 'bday_wrapper');
-        errorStyle('bday');
-    } else {
-        if (errorBday) {
-            errorBday.remove();
-        }
-    }
-
-    const errorPassword = document.querySelector('.error_password');
-    const passwordMask = /^(?=.*?[a-z])(?=.*?[0-9]).{8,}$/;
-    if (elemArray['password'].value.length < 1) {
-        event.preventDefault();
-        if (errorPassword) {
-            errorPassword.remove();
-        }
-        createError('error_password', 'Это поле обязательно для заполнения!', 'password_wrapper');
-        errorStyle('password');
-    } else if (!passwordMask.test(elemArray['password'].value)) {
-        event.preventDefault();
-        if (errorPassword) {
-            errorPassword.remove();
-        }
-        createError('error_password', 'Пароль слишком простой!', 'password_wrapper');
-        errorStyle('password');
-    } else if (elemArray['password'].value !== elemArray['passwordRepeat'].value) {
-        event.preventDefault();
-        if (errorPassword) {
-            errorPassword.remove();
-        }
-        createError('error_password', 'Пароли не совпадают!', 'password_wrapper');
-        errorStyle('password');
-    } else {
-        if (errorPassword) {
-            errorPassword.remove();
-        }
-    }
-});
-
-elemArray['phone'].addEventListener('input', () => {
-    const errorTel = document.querySelector('.error_tel');
-    if (elemArray['phone'].value.length > 0 && errorTel) {
-        errorTel.remove();
-    }
-});
-
-elemArray['email'].addEventListener('input', () => {
-    const errorEmail = document.querySelector('.error_email');
-    if (elemArray['email'].value.length > 0 && errorEmail) {
-        errorEmail.remove();
-    }
-});
-
-elemArray['username'].addEventListener('input', () => {
-    const errorUsername = document.querySelector('.error_username');
-    if (elemArray['username'].value.length > 0 && errorUsername) {
-        errorUsername.remove();
-    }
-});
-
-elemArray['lastName'].addEventListener('input', () => {
-    const errorLastname = document.querySelector('.error_lastName');
-    if (elemArray['lastName'].value.length > 0 && errorLastname) {
-        errorLastname.remove();
-    }
-});
-
-elemArray['bday'].addEventListener('input', () => {
-    const errorBday = document.querySelector('.error_bday');
-    if (elemArray['bday'].value.length > 0 && errorBday) {
-        errorBday.remove();
-    }
-});
-
-elemArray['password'].addEventListener('input', () => {
-    const errorPassword = document.querySelector('.error_password');
-    if (elemArray['password'].value.length > 0 && errorPassword) {
-        errorPassword.remove();
     }
 });
