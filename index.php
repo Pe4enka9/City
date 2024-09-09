@@ -61,7 +61,7 @@ if (isset($_SESSION['user'])) {
     <span>Ещё нет аккаунта? <a href="./pages/register.php">Зарегистрироваться!</a></span>
 </form>
 
-<script src="./js/main.js"></script>
+<script type="module" src="./js/main.js"></script>
 </body>
 
 </html>

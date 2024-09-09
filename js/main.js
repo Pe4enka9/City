@@ -1,3 +1,5 @@
+import {errorStyle} from "./functions.js";
+
 const passwordWrapper = document.querySelector('.password_wrapper');
 const passwordInput = document.getElementById('password');
 
@@ -26,7 +28,4 @@ passwordEye.addEventListener('click', () => {
     }
 });
 
-const tel = document.getElementById("tel");
-const error = document.querySelector(".error");
-const forError = tel.clientWidth / 2 + 20 + "px";
-error.style.left = `calc(50% + ${forError})`;
+errorStyle('tel');

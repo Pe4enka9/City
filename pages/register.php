@@ -46,7 +46,6 @@ if (isset($_SESSION['user'])) {
 
         <div class="wrapper email_wrapper">
             <input type="text" name="email" id="email" placeholder="Введите свою эл. почту" autocomplete="off">
-            <span class="error email_error"></span>
         </div>
 
         <div class="wrapper username_wrapper">
@@ -76,7 +75,7 @@ if (isset($_SESSION['user'])) {
 </form>
 
 <script src="https://unpkg.com/imask"></script>
-<script src="../js/register.js"></script>
+<script type="module" src="../js/register.js"></script>
 </body>
 
 </html>
